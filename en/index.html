@@ -10,7 +10,7 @@
 
 
 <link rel="search" type="application/opensearchdescription+xml" title="Ditsmod" href="/en/opensearch.xml"><link rel="stylesheet" href="/en/assets/css/styles.04705a6c.css">
-<script src="/en/assets/js/runtime~main.b89c13fb.js" defer="defer"></script>
+<script src="/en/assets/js/runtime~main.c132af5e.js" defer="defer"></script>
 <script src="/en/assets/js/main.232b0917.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -51,7 +51,7 @@
 <p>You can check the server operation using <code>curl</code>:</p>
 <div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#bfc7d5;--prism-background-color:#292d3e"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#bfc7d5;background-color:#292d3e"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#bfc7d5"><span class="token plain">curl -i localhost:3000/api/hello</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
 <p>Or simply by going to <a href="http://localhost:3000/api/hello" target="_blank" rel="noopener noreferrer">http://localhost:3000/api/hello</a> in your browser.</p>
-<p>By default, the application works with <code>debug</code> log level. You can change it in the file <code>apps/backend/src/app/app.module.ts</code>.</p>
+<p>By default, the application works with <code>debug</code> log level. You can change it in the file <code>src/app/app.module.ts</code> or <code>apps/backend/src/app/app.module.ts</code> (in the monorepository).</p>
 <p>Of course, instead of two terminals, you can use, for example, <a href="https://github.com/TypeStrong/ts-node" target="_blank" rel="noopener noreferrer">ts-node</a> in one terminal, but this is a slower option, because after each change <code>ts-node</code> will recompile all the code on the fly, while in <code>tsc -w</code> only recompiles the changed file. In addition, thanks to <a href="https://github.com/ditsmod/seed" target="_blank" rel="noopener noreferrer">ditsmod/seed</a>&#x27;s use of the so-called <a href="https://www.typescriptlang.org/docs/handbook/project-references.html" target="_blank" rel="noopener noreferrer">Project References</a> and <code>tsc -b</code> build mode, even very large projects compile very quickly.</p>
 <p>Note that there are four config files for TypeScript in the <code>ditsmod/seed</code> repository:</p>
 <ul>
