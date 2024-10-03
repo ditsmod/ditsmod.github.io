@@ -10,7 +10,7 @@
 
 
 <link rel="search" type="application/opensearchdescription+xml" title="Ditsmod" href="/opensearch.xml"><link rel="stylesheet" href="/assets/css/styles.77fb25de.css">
-<script src="/assets/js/runtime~main.0459980f.js" defer="defer"></script>
+<script src="/assets/js/runtime~main.8c91a5a7.js" defer="defer"></script>
 <script src="/assets/js/main.2898db00.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -33,10 +33,10 @@
 <li>Ditsmod створює інстанс <a href="https://github.com/ditsmod/ditsmod/blob/core-2.54.0/packages/core/src/services/pre-router.ts" target="_blank" rel="noopener noreferrer">PreRouter</a> на рівні застосунку.</li>
 <li><code>PreRouter</code> за допомогою роутера шукає обробника запиту відповідно до URI.</li>
 <li>Якщо обробника запиту не знайдено, <code>PreRouter</code> видає помилку зі статусом 501.</li>
-<li>Якщо знайшовся обробник запиту, Ditsmod створює інстанс провайдера з токеном <a href="https://github.com/ditsmod/ditsmod/blob/core-2.54.0/packages/core/src/interceptors/default-singleton-http-frontend.ts" target="_blank" rel="noopener noreferrer">HttpFrontend</a> на рівні запиту, ставить його першим у черзі інтерсепторів і автоматично викликає. By default, цей інтерсептор відповідає за встановлення значень для провайдерів з токенами <code>QUERY_PARAMS</code> та <code>PATH_PARAMS</code>.</li>
+<li>Якщо знайшовся обробник запиту, Ditsmod створює інстанс провайдера з токеном <a href="https://github.com/ditsmod/ditsmod/blob/core-2.54.0/packages/core/src/interceptors/default-http-frontend.ts" target="_blank" rel="noopener noreferrer">HttpFrontend</a> на рівні запиту, ставить його першим у черзі інтерсепторів і автоматично викликає. By default, цей інтерсептор відповідає за встановлення значень для провайдерів з токенами <code>QUERY_PARAMS</code> та <code>PATH_PARAMS</code>.</li>
 <li>Якщо в поточному маршруті є ґарди, то по-дефолту запускається <code>InterceptorWithGuards</code> зразу після <code>HttpFrontend</code>.</li>
 <li>Наступними можуть запуститись інші інтерсептори, це залежать від того, чи запустить їх попередній у черзі інтерсептор.</li>
-<li>Якщо усі інтерсептори відпр ацювали, Ditsmod запускає <a href="https://github.com/ditsmod/ditsmod/blob/core-2.54.0/packages/core/src/interceptors/default-http-backend.ts" target="_blank" rel="noopener noreferrer">HttpBackend</a>, інстанс якого створюється на рівні запиту. By default, <code>HttpBackend</code> запускає безпосередньо метод контролера, що відповідає за обробку поточного запиту.</li>
+<li>Якщо усі інтерсептори відпрацюва ли, Ditsmod запускає <a href="https://github.com/ditsmod/ditsmod/blob/core-2.54.0/packages/core/src/interceptors/default-http-backend.ts" target="_blank" rel="noopener noreferrer">HttpBackend</a>, інстанс якого створюється на рівні запиту. By default, <code>HttpBackend</code> запускає безпосередньо метод контролера, що відповідає за обробку поточного запиту.</li>
 </ol>
 <p>Отже, приблизний порядок обробки запиту такий:</p>
 <ol>
@@ -57,10 +57,10 @@
 <li>Ditsmod створює інстанс <a href="https://github.com/ditsmod/ditsmod/blob/core-2.54.0/packages/core/src/services/pre-router.ts" target="_blank" rel="noopener noreferrer">PreRouter</a> на рівні застосунку.</li>
 <li><code>PreRouter</code> за допомогою роутера шукає обробника запиту відповідно до URI.</li>
 <li>Якщо обробника запиту не знайдено, <code>PreRouter</code> видає помилку зі статусом 501.</li>
-<li>Якщо знайшовся обробник запиту, Ditsmod використовує інстанс провайдера з токеном <a href="https://github.com/ditsmod/ditsmod/blob/core-2.54.0/packages/core/src/interceptors/default-singleton-http-frontend.ts" target="_blank" rel="noopener noreferrer">HttpFrontend</a> на рівні роуту, ставить його першим у черзі інтерсепторів і автоматично викликає. By default, цей інтерсептор відповідає за встановлення значень <code>pathParams</code> та <code>queryParams</code> для <code>SingletonRequestContext</code>.</li>
+<li>Якщо знайшовся обробник запиту, Ditsmod використовує інстанс провайдера з токеном <a href="https://github.com/ditsmod/ditsmod/blob/core-2.54.0/packages/core/src/interceptors/default-http-frontend.ts" target="_blank" rel="noopener noreferrer">HttpFrontend</a> на рівні роуту, ставить його першим у черзі інтерсепторів і автоматично викликає. By default, цей інтерсептор відповідає за встановлення значень <code>pathParams</code> та <code>queryParams</code> для <code>SingletonRequestContext</code>.</li>
 <li>Якщо в поточному маршруті є ґарди, то по-дефолту запускається <code>SingletonInterceptorWithGuards</code> зразу після <code>HttpFrontend</code>.</li>
 <li>Наступними можуть запуститись інші інтерсептори, це залежать від того, чи запустить їх попередній у черзі інтерсептор.</li>
-<li>Якщо усі інтерсептори відпрацювали, Ditsmod запускає <a href="https://github.com/ditsmod/ditsmod/blob/core-2.54.0/packages/core/src/interceptors/default-http-backend.ts" target="_blank" rel="noopener noreferrer">HttpBackend</a>, інстанс якого використовується на рівні роуту. By default, <code>HttpBackend</code> запускає без посередньо метод контролера, що відповідає за обробку поточного запиту.</li>
+<li>Якщо усі інтерсептори відпрацювали, Ditsmod запускає <a href="https://github.com/ditsmod/ditsmod/blob/core-2.54.0/packages/core/src/interceptors/default-http-backend.ts" target="_blank" rel="noopener noreferrer">HttpBackend</a>, інстанс якого використовується на рівні роуту. By default, <code>HttpBackend</code> запускає безпосередньо метод контролера, що відповідає за обробку поточного запиту.</li>
 </ol>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="створення-інтерсептора">Створення інтерсептора<a href="#створення-інтерсептора" class="hash-link" aria-label="Пряме посилання на Створення інтерсептора" title="Пряме посилання на Створення інтерсептора">​</a></h2>
 <p>Кожен інтерсептор повинен бути класом, що впроваджує інтерфейс <a href="https://github.com/ditsmod/ditsmod/blob/core-2.54.0/packages/core/src/types/http-interceptor.ts#L43-L45" target="_blank" rel="noopener noreferrer">HttpInterceptor</a>, та має анотацію з декоратором <code>injectable</code>:</p>
