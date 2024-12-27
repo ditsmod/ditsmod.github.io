@@ -10,7 +10,7 @@
 
 
 <link rel="search" type="application/opensearchdescription+xml" title="Ditsmod" href="/en/opensearch.xml"><link rel="stylesheet" href="/en/assets/css/styles.b22d2f16.css">
-<script src="/en/assets/js/runtime~main.72962636.js" defer="defer"></script>
+<script src="/en/assets/js/runtime~main.fd1a977e.js" defer="defer"></script>
 <script src="/en/assets/js/main.9dbec736.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -151,18 +151,18 @@
 <p>For example, if you write a class that depends on an HTTP request, you can only pass it to the <code>providersPerReq</code> array, as only from this array an injector is formed, to which Ditsmod will automatically add the provider with the HTTP request object. On the other hand, an instance of this class will have access to all of its parent injectors: at the route, module, and application levels. Therefore, this class can depend on providers at any level.</p>
 <p>You can also write a certain class and pass it to the <code>providersPerMod</code> array. In this case, it can only depend on providers at the module or application level. If it depends on the providers you passed in the <code>providersPerRou</code> or <code>providersPerReq</code> array, you will get an error saying that those providers were not found.</p>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="hierarchy-of-controller-injectors">Hierarchy of controller injectors<a href="#hierarchy-of-controller-injectors" class="hash-link" aria-label="Direct link to heading" title="Direct link to heading">​</a></h3>
-<p>Any <a href="/en/components-of-ditsmod-app/controllers-and-services/#what-is-a-controller">non-singleton</a> controller, in addition to its own injector at the request level, also has three parent injectors: at the route, module, and application levels. These injectors are also generated based on the providers you pass in the following arrays:</p>
+<p>The controller in <a href="/en/components-of-ditsmod-app/controllers-and-services/#what-is-a-controller">injector-scoped</a> mode, in addition to its own injector at the request level, also has three parent injectors: at the route, module, and application levels. These injectors are also generated based on the providers you pass in the following arrays:</p>
 <ul>
 <li><code>providersPerApp</code>;</li>
 <li><code>providersPerMod</code>;</li>
 <li><code>providersPerRou</code>;</li>
-<li><code>providersPerReq</code> (this is the array from which the injector for the non-singleton controller is formed).</li>
+<li><code>providersPerReq</code> (this is an array from which the injector for the controller in injector-scoped mode is formed).</li>
 </ul>
-<p>That is, the non-singleton controller can depend on services at any level.</p>
-<p>If the controller is <a href="/en/components-of-ditsmod-app/controllers-and-services/#what-is-a-controller">singleton</a>, its own injector is at the module level, and it has one parent injector at the application levels:</p>
+<p>That is, the controller in injector-scoped mode can depend on services at any level.</p>
+<p>If the controller in <a href="/en/components-of-ditsmod-app/controllers-and-services/#what-is-a-controller">context-scoped</a> mode, its own injector is at the module level, and it has one parent injector at the application levels:</p>
 <ul>
 <li><code>providersPerApp</code>;</li>
-<li><code>providersPerMod</code> (this is the array from which the injector for the singleton controller is formed).</li>
+<li><code>providersPerMod</code> (this is the array from which the injector for the controller in context-scoped mode is formed).</li>
 </ul>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="hierarchy-of-service-injectors">Hierarchy of service injectors<a href="#hierarchy-of-service-injectors" class="hash-link" aria-label="Direct link to heading" title="Direct link to heading">​</a></h3>
 <p>Unlike the controller, the injector of a certain service can be at any level: at the application, module, route, or request level. In practice, this means that the provider for this service is transferred to one (or several) of the above-mentioned arrays. For example, in the following example, <code>SomeService</code> is passed to the injector at the route level, and <code>OtherService</code> is passed to the injector at the module level:</p>
