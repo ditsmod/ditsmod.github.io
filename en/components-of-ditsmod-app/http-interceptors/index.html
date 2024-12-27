@@ -10,7 +10,7 @@
 
 
 <link rel="search" type="application/opensearchdescription+xml" title="Ditsmod" href="/en/opensearch.xml"><link rel="stylesheet" href="/en/assets/css/styles.b22d2f16.css">
-<script src="/en/assets/js/runtime~main.c55ddc9a.js" defer="defer"></script>
+<script src="/en/assets/js/runtime~main.72962636.js" defer="defer"></script>
 <script src="/en/assets/js/main.9dbec736.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -57,7 +57,7 @@
 <li><code>PreRouter</code> uses the router to search for the request handler according to the URI.</li>
 <li>If the request handler is not found, <code>PreRouter</code> issues a 501 error.</li>
 <li>If a request handler is found, Ditsmod uses a provider instance with the <a href="https://github.com/ditsmod/ditsmod/blob/core-2.54.0/packages/core/src/interceptors/default-http-frontend.ts" target="_blank" rel="noopener noreferrer">HttpFrontend</a> token at the route level, places it first in the interceptor queue, and automatically invokes it. By default, this interceptor is responsible for setting <code>pathParams</code> and <code>queryParams</code> values for <code>SingletonRequestContext</code>.</li>
-<li>If there are guards in the current route, then by default <code>SingletonInterceptorWithGuards</code> is run immediately after <code>HttpFrontend</code>.</li>
+<li>If there are guards in the current route, then by default <code>InterceptorWithGuardsPerRou</code> is run immediately after <code>HttpFrontend</code>.</li>
 <li>Other interceptors may be launched next, depending on whether the previous interceptor in the queue will launch them.</li>
 <li>If all interceptors have worked, Ditsmod starts <a href="https://github.com/ditsmod/ditsmod/blob/core-2.54.0/packages/core/src/interceptors/default-http-backend.ts" target="_blank" rel="noopener noreferrer">HttpBackend</a>, the instance of which is used at the route level. By default, <code>HttpBackend</code> runs directly the controller method responsible for processing the current request.</li>
 </ol>
