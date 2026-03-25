@@ -11,7 +11,7 @@
 
 
 <link rel="search" type="application/opensearchdescription+xml" title="Ditsmod" href="/en/opensearch.xml"><link rel="stylesheet" href="/en/assets/css/styles.b4c0f259.css">
-<script src="/en/assets/js/runtime~main.56ec6cba.js" defer="defer"></script>
+<script src="/en/assets/js/runtime~main.a8641962.js" defer="defer"></script>
 <script src="/en/assets/js/main.f7915497.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -26,9 +26,9 @@
 <li class=""><strong>Modular architecture</strong> with decorators, enabling declarative application structure definition.</li>
 <li class="">Support for creating custom extensions (sometimes referred to as plugins) that can initialize asynchronously and depend on one another.</li>
 <li class="">Built-in <strong>OpenAPI</strong> support with request validation based on OpenAPI metadata.</li>
-<li class="">As of today, <a href="https://www.techempower.com/benchmarks/#section=test&amp;runid=8495ffea-08e2-4da7-a91d-4d6a48690ef2&amp;l=zieepr-cjj" target="_blank" rel="noopener noreferrer" class="">Ditsmod is one of the fastest Node.js web frameworks</a>:</li>
+<li class="">As of today, <a href="https://github.com/ditsmod/vs-webframework" target="_blank" rel="noopener noreferrer" class="">Ditsmod is one of the fastest Node.js web frameworks</a>:</li>
 </ul>
-<p><img decoding="async" loading="lazy" alt="Techempower benchmarks" src="/en/assets/images/tech-empower-benchmarks-ff767d4948dfa330d61e65d8da8a9d3d.png" width="1163" height="535" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" src="https://raw.githubusercontent.com/ditsmod/vs-webframework/refs/heads/main/req-per-sec-frameworks3.png" alt="JS frameworks benchmarks" class="img_ev3q"></p>
 <p>Some architectural concepts in Ditsmod are inspired by <a href="https://github.com/angular/angular" target="_blank" rel="noopener noreferrer" class="">Angular</a>, with its DI system built on Angular&#x27;s native DI module.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="expressjs-vs-ditsmod">ExpressJS vs. Ditsmod<a href="#expressjs-vs-ditsmod" class="hash-link" aria-label="Direct link to heading" title="Direct link to heading" translate="no">​</a></h3>
 <p>For comparison, the following examples demonstrate the minimal code needed to start applications with ExpressJS and Ditsmod.</p>
@@ -40,7 +40,7 @@
 <li class="">the role of the module where the controllers are declared;</li>
 <li class="">the role of the application that contains the HTTP server.</li>
 </ul>
-<p>Looking at the amount of code, you might think that Ditsmod is slower than ExpressJS because of its verbosity. But in fact, only Ditsmod&#x27;s cold start is slightly slower (it starts in 34 ms on my laptop, while ExpressJS starts in 4 ms). In terms of request processing speed, <a href="https://www.techempower.com/benchmarks/#section=test&amp;runid=8495ffea-08e2-4da7-a91d-4d6a48690ef2&amp;l=zieepr-cjj" target="_blank" rel="noopener noreferrer" class="">Ditsmod is more than twice as fast as ExpressJS</a>.</p>
+<p>Looking at the amount of code, you might think that Ditsmod is slower than ExpressJS because of its verbosity. But in fact, only Ditsmod&#x27;s cold start is slightly slower (it starts in 34 ms on my laptop, while ExpressJS starts in 4 ms). In terms of request processing speed, <a href="https://github.com/ditsmod/vs-webframework" target="_blank" rel="noopener noreferrer" class="">Ditsmod is more than twice as fast as ExpressJS</a>.</p>
 <p>More application examples are available in the <a href="https://github.com/ditsmod/ditsmod/tree/main/examples" target="_blank" rel="noopener noreferrer" class="">Ditsmod</a> repository, as well as in the <a href="https://github.com/ditsmod/realworld" target="_blank" rel="noopener noreferrer" class="">RealWorld</a> repository.</p>
 <p>P.S. Although a link to a repository with all the necessary settings for Ditsmod applications is provided below, still, if you want to use only the code from the previous example, do not forget to specify the following in the tsconfig files:</p>
 <div class="language-json codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#bfc7d5;--prism-background-color:#292d3e"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-json codeBlock_bY9V thin-scrollbar" style="color:#bfc7d5;background-color:#292d3e"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#bfc7d5"><span class="token plain">{</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">  &quot;compilerOptions&quot;: {</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">    // ...</span><br></span><span class="token-line theme-code-block-highlighted-line" style="color:#bfc7d5"><span class="token plain">    &quot;experimentalDecorators&quot;: true,</span><br></span><span class="token-line theme-code-block-highlighted-line" style="color:#bfc7d5"><span class="token plain">    &quot;emitDecoratorMetadata&quot;: true</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">  }</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">}</span><br></span></code></pre></div></div>

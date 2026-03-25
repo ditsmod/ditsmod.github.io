@@ -11,7 +11,7 @@
 
 
 <link rel="search" type="application/opensearchdescription+xml" title="Ditsmod" href="/en/opensearch.xml"><link rel="stylesheet" href="/en/assets/css/styles.b4c0f259.css">
-<script src="/en/assets/js/runtime~main.56ec6cba.js" defer="defer"></script>
+<script src="/en/assets/js/runtime~main.a8641962.js" defer="defer"></script>
 <script src="/en/assets/js/main.f7915497.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -22,7 +22,7 @@
 <p>As stated in the <a class="" href="/en/basic-components/application/">application class overview</a>, Ditsmod provides an API for writing applications with different architectural styles (REST, tRPC, GraphQL, WebSockets, Microservices, etc.). Initialization starts with creating an instance of the application class, and it is at this stage that the configuration accepted by the application class and the order of its assembly are determined.</p>
 <p>The initialization stages of applications with different architectural styles may differ, but as a rule, the following happens:</p>
 <ol>
-<li class="">Application scanning using the <a class="" href="/en/deep-dive/module-manager/">ModuleManager</a> starts from the root module.</li>
+<li class="">First, <a class="" href="/en/deep-dive/module-manager/">ModuleManager</a> scans all modules, starting with the root module.</li>
 <li class="">Decorators of the root module, feature modules, and <a class="" href="/en/deep-dive/init-decorators/">init decorators</a> allow attaching certain metadata to module classes. During application scanning, this metadata is normalized and validated.</li>
 <li class="">Then the <a href="https://github.com/ditsmod/ditsmod/blob/v3.0.0-alpha.5/packages/core/src/init/base-app-initializer.ts" target="_blank" rel="noopener noreferrer" class="">AppInitializer</a> analyzes this metadata, collects providers, and runs extensions.</li>
 <li class="">Application initialization is completed in the <a class="" href="/en/basic-components/application/">Application</a> class, the web server is started, and the application begins operating in normal mode, accepting HTTP requests.</li>
