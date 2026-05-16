@@ -11,7 +11,7 @@
 
 
 <link rel="search" type="application/opensearchdescription+xml" title="Ditsmod" href="/opensearch.xml"><link rel="stylesheet" href="/assets/css/styles.cb283775.css">
-<script src="/assets/js/runtime~main.6752eac0.js" defer="defer"></script>
+<script src="/assets/js/runtime~main.d1b1ffb8.js" defer="defer"></script>
 <script src="/assets/js/main.e4cd3035.js" defer="defer"></script>
 </head>
 <body>
@@ -40,7 +40,7 @@
 <li class="">роль модуля, в якому задекларовано контролери;</li>
 <li class="">роль застосунку, який містить HTTP-сервер.</li>
 </ul>
-<p>Оцінюючи об&#x27;єм коду, можна припустити, що через свою багатослівність, Ditsmod є повільнішим за ExpressJS. Але насправді трохи повільнішим є лише холодний старт Ditsmod (на моєму ноутбуку він стартує за 34 ms, тоді як ExpressJS стартує за 4 ms). Що стосується швидкості обробки запитів, то <a href="https://github.com/ditsmod/vs-webframework" target="_blank" rel="noopener noreferrer" class="">Ditsmod більш ніж удвічі швидший за ExpressJS</a>.</p>
+<p>Оцінюючи об&#x27;єм коду, можна припустити, що через свою багатослівність, Ditsmod є повільнішим за ExpressJS. Але насправді трохи повільнішим є лише холодний старт Ditsmod (на моєму ноутбуку він стартує за 34 ms, тоді як ExpressJS стартує за 4 ms). Що стосується швидкості обробки запитів, то <a href="https://github.com/ditsmod/vs-webframework" target="_blank" rel="noopener noreferrer" class="">Ditsmod швидший за ExpressJS на ~30%</a>.</p>
 <p>Більше прикладів застосунку є у репозиторію <a href="https://github.com/ditsmod/ditsmod/tree/main/examples" target="_blank" rel="noopener noreferrer" class="">Ditsmod</a>, а також у репозиторію <a href="https://github.com/ditsmod/realworld" target="_blank" rel="noopener noreferrer" class="">RealWorld</a>.</p>
 <p>P.S. Хоча нижче надано лінк на репозиторій з усіма необхідними налаштуваннями для Ditsmod-застосунків, але, все ж таки, якщо ви захочете використати лише код з попереднього прикладу, незабудьте у tsconfig-файлах прописати наступне:</p>
 <div class="language-json codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#bfc7d5;--prism-background-color:#292d3e"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-json codeBlock_bY9V thin-scrollbar" style="color:#bfc7d5;background-color:#292d3e"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#bfc7d5"><span class="token plain">{</span><br></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">  &quot;compilerOptions&quot;: {</span><br></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">    // ...</span><br></div><div class="token-line theme-code-block-highlighted-line" style="color:#bfc7d5"><span class="token plain">    &quot;experimentalDecorators&quot;: true,</span><br></div><div class="token-line theme-code-block-highlighted-line" style="color:#bfc7d5"><span class="token plain">    &quot;emitDecoratorMetadata&quot;: true</span><br></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">  }</span><br></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">}</span><br></div></code></pre></div></div>

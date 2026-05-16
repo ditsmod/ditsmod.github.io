@@ -11,7 +11,7 @@
 
 
 <link rel="search" type="application/opensearchdescription+xml" title="Ditsmod" href="/en/opensearch.xml"><link rel="stylesheet" href="/en/assets/css/styles.cb283775.css">
-<script src="/en/assets/js/runtime~main.18bf8406.js" defer="defer"></script>
+<script src="/en/assets/js/runtime~main.1d6245fa.js" defer="defer"></script>
 <script src="/en/assets/js/main.0eb32aa0.js" defer="defer"></script>
 </head>
 <body>
@@ -40,7 +40,7 @@
 <li class="">the role of the module where the controllers are declared;</li>
 <li class="">the role of the application that contains the HTTP server.</li>
 </ul>
-<p>Looking at the amount of code, you might think that Ditsmod is slower than ExpressJS because of its verbosity. But in fact, only Ditsmod&#x27;s cold start is slightly slower (it starts in 34 ms on my laptop, while ExpressJS starts in 4 ms). In terms of request processing speed, <a href="https://github.com/ditsmod/vs-webframework" target="_blank" rel="noopener noreferrer" class="">Ditsmod is more than twice as fast as ExpressJS</a>.</p>
+<p>Looking at the amount of code, you might think that Ditsmod is slower than ExpressJS because of its verbosity. But in fact, only Ditsmod&#x27;s cold start is slightly slower (it starts in 34 ms on my laptop, while ExpressJS starts in 4 ms). As for request processing speed, <a href="https://github.com/ditsmod/vs-webframework" target="_blank" rel="noopener noreferrer" class="">Ditsmod is ~30% faster than ExpressJS</a>.</p>
 <p>More application examples are available in the <a href="https://github.com/ditsmod/ditsmod/tree/main/examples" target="_blank" rel="noopener noreferrer" class="">Ditsmod</a> repository, as well as in the <a href="https://github.com/ditsmod/realworld" target="_blank" rel="noopener noreferrer" class="">RealWorld</a> repository.</p>
 <p>P.S. Although a link to a repository with all the necessary settings for Ditsmod applications is provided below, still, if you want to use only the code from the previous example, do not forget to specify the following in the tsconfig files:</p>
 <div class="language-json codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#bfc7d5;--prism-background-color:#292d3e"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-json codeBlock_bY9V thin-scrollbar" style="color:#bfc7d5;background-color:#292d3e"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#bfc7d5"><span class="token plain">{</span><br></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">  &quot;compilerOptions&quot;: {</span><br></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">    // ...</span><br></div><div class="token-line theme-code-block-highlighted-line" style="color:#bfc7d5"><span class="token plain">    &quot;experimentalDecorators&quot;: true,</span><br></div><div class="token-line theme-code-block-highlighted-line" style="color:#bfc7d5"><span class="token plain">    &quot;emitDecoratorMetadata&quot;: true</span><br></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">  }</span><br></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">}</span><br></div></code></pre></div></div>
